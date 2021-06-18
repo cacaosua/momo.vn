@@ -76,10 +76,6 @@ class MomoVn {
       mes = 'merchantcode is required. Please check if key is present in options.';
       error = true;
     }
-    if (options.partner.isEmpty) {
-      mes = 'merchantcode is required. Please check if key is present in options.';
-      error = true;
-    }
     if (Platform.isIOS && (options.appScheme.isEmpty)) {
       mes = 'appScheme is required. Please check if key is present in options.';
       error = true;
@@ -121,11 +117,9 @@ class PaymentResponse {
 }
 
 class MomoPaymentInfo {
-  String partner;
   String appScheme;
   String merchantName;
   String merchantCode;
-  String partnerCode;
   String merchantNameLabel;
 
   int amount;
@@ -142,11 +136,9 @@ class MomoPaymentInfo {
     required this.appScheme,
     required this.merchantName,
     required this.merchantCode,
-    required this.partnerCode,
     required this.amount,
     required this.orderId,
     required this.orderLabel,
-    required this.partner,
     required this.merchantNameLabel,
     required this.fee,
     this.description,
@@ -159,11 +151,9 @@ class MomoPaymentInfo {
     Map<String, dynamic> json = {
       "merchantName": this.merchantName,
       "merchantCode": this.merchantCode,
-      "partnerCode": this.partnerCode,
       "amount": this.amount,
       "orderId": this.orderId,
       "orderLabel": this.orderLabel,
-      "partner": this.partner,
       "fee": this.fee,
       "isTestMode": isTestMode,
       "merchantNameLabel": merchantNameLabel
