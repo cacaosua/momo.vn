@@ -117,6 +117,7 @@ class PaymentResponse {
 }
 
 class MomoPaymentInfo {
+  String partner;
   String appScheme;
   String merchantName;
   String merchantCode;
@@ -124,6 +125,7 @@ class MomoPaymentInfo {
 
   int amount;
   int fee;
+  String? partnerCode;
   String? description;
   String? extra;
   String? username;
@@ -133,6 +135,7 @@ class MomoPaymentInfo {
   bool isTestMode;
 
   MomoPaymentInfo({
+    required this.partner,
     required this.appScheme,
     required this.merchantName,
     required this.merchantCode,
@@ -141,6 +144,7 @@ class MomoPaymentInfo {
     required this.orderLabel,
     required this.merchantNameLabel,
     required this.fee,
+    required this.partnerCode,
     this.description,
     this.username,
     this.extra,
